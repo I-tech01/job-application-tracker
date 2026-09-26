@@ -14,7 +14,6 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { useState } from "react";
 import { signUp } from "@/lib/auth/auth-client";
-import { authClient } from "@/lib/auth/auth-client";
 import { useRouter } from "next/navigation";
 
 export default function SignUp() {
@@ -75,6 +74,8 @@ export default function SignUp() {
                 id="name"
                 required
                 className="border-gray-300 focus:border-primary focus:ring-primary"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
               />
             </div>
             <div>
@@ -87,6 +88,8 @@ export default function SignUp() {
                 id="email"
                 required
                 className="border-gray-300 focus:border-primary focus:ring-primary"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
               />
             </div>
             <div>
@@ -100,6 +103,8 @@ export default function SignUp() {
                 required
                 minLength={8}
                 className="border-gray-300 focus:border-primary focus:ring-primary"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
               />
             </div>
           </CardContent>
